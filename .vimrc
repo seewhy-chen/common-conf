@@ -222,9 +222,6 @@ Bundle 'nelstrom/vim-visual-star-search'
 filetype plugin on
 filetype plugin indent on
 
-" for matchit
-let b:match_words = '\<#ifndef\>:\<#endif\>,\<#ifdef\>:\<#endif\>'
-
 set backspace=indent,eol,start
 set ruler
 set	rnu
