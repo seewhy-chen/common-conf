@@ -6,6 +6,10 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
 " multi-encoding setting
 if has("multi_byte")
 	"set bomb
@@ -44,6 +48,29 @@ else
 	echoerr "Sorry, this version of (g)vim was not compiled with multi_byte"
 endif
 
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set history=50      " keep 50 lines of command line history
+set ruler       " show the cursor position all the time
+set showcmd     " display incomplete commands
+set incsearch       " do incremental searching
+set scrolloff=3
+set expandtab
+set smarttab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set nobackup
+"set nowritebackup
+set rnu
+set nu
+set ignorecase smartcase
+set si
+set shortmess=a
+set autoread
+set autowrite
+set guifont=Source\ Code\ Pro:h12:cANSI
 
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
