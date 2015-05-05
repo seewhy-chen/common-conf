@@ -74,7 +74,6 @@ set guifont=Source\ Code\ Pro:h12:cANSI
 
 Bundle 'scrooloose/syntastic'
 Bundle 'ervandew/supertab'
-Bundle 'plasticboy/vim-markdown'
 Bundle 'OmniCppComplete'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jiangmiao/auto-pairs'
