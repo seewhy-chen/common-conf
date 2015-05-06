@@ -240,4 +240,4 @@ set shortmess=a
 set incsearch
 
 :nmap \evrc :e ~/.vimrc<CR>
-:colo murphy
+:colo default
