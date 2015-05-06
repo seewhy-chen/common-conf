@@ -239,5 +239,4 @@ set nobackup
 set shortmess=a
 set incsearch
 
-:nmap \evrc :e ~/.vimrc<CR>
-:colo murphy
+nmap \evrc :e ~/.vimrc<CR>
