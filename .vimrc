@@ -221,6 +221,7 @@ Bundle 'nelstrom/vim-visual-star-search'
 filetype plugin on
 filetype plugin indent on
 
+let g:fencview_autodetect=1
 set backspace=indent,eol,start
 set ruler
 set	rnu
