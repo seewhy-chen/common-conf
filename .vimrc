@@ -218,10 +218,13 @@ Bundle 'kana/vim-textobj-entire'
 
 Bundle 'nelstrom/vim-visual-star-search'
 
+Bundle 'A.vim'
+
 filetype plugin on
 filetype plugin indent on
 
 let g:fencview_autodetect=1
+
 set backspace=indent,eol,start
 set ruler
 set	rnu
@@ -240,4 +243,5 @@ set nobackup
 set shortmess=a
 set incsearch
 
-:nmap \evrc :e ~/.vimrc<CR>
+nmap \evrc :e ~/.vimrc<CR>
+nmap F6 so ~/.vimrc<CR>
