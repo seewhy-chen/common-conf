@@ -39,11 +39,11 @@ if has("multi_byte")
 		set fileencoding=euc-jp
 	endif
 	" Detect UTF-8 locale, and replace CJK setting if needed
-	" if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-	" 	set encoding=utf-8
-	" 	set termencoding=utf-8
-	" 	set fileencoding=utf-8
-	" endif
+	if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+		set encoding=utf-8
+		set termencoding=utf-8
+		set fileencodings=cp936,utf-8
+	endif
 else
 	echoerr "Sorry, this version of (g)vim was not compiled with multi_byte"
 endif
