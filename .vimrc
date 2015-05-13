@@ -243,5 +243,6 @@ set nobackup
 set shortmess=a
 set incsearch
 
-nmap \evrc :e ~/.vimrc<CR>
+let mapleader = ","
+nmap <leader>evrc :e ~/.vimrc<CR>
 nmap F6 so ~/.vimrc<CR>
