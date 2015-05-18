@@ -246,3 +246,10 @@ set incsearch
 let mapleader = ","
 nmap <leader>evrc :e ~/.vimrc<CR>
 nmap F6 so ~/.vimrc<CR>
+
+" infinite undo
+set undofile
+set undodir=~/.vim/.undodir
+
+" auto save all files on focus lost
+:au FocusLost * silent| wa
