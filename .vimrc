@@ -94,6 +94,11 @@ Bundle 'FuzzyFinder'
 " <LEADER><LEADER>w -- jump to words
 " <LEADER><LEADER>f<char> -- jump to <char>
 Bundle 'Lokaltog/vim-easymotion'
+    omap z <Plug>(easymotion-t)
+    let g:EasyMotion_keys='hklyuiopnm,qwertzxcvbasdgjf;'
+    let g:EasyMotion_smartcase = 1
+    nmap <space> <Plug>(easymotion-bd-w)
+    nmap <S-space> <Plug>(easymotion-bd-e)
 
 
 " <LEADER>cc -- comment
@@ -246,6 +251,11 @@ set incsearch
 let mapleader = ","
 nmap <leader>evrc :e ~/.vimrc<CR>
 nmap F6 so ~/.vimrc<CR>
+
+" switch between window/pane as same as tmux
+nmap <C-A> <C-W>
+nmap <C-w>\| <C-w>v<C-w>l
+nmap <C-w>- <C-w>s<C-w>j
 
 " infinite undo
 set undofile
