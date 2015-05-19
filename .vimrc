@@ -8,7 +8,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " multi-encoding setting
 if has("multi_byte")
@@ -72,28 +72,28 @@ set autoread
 set autowrite
 set guifont=Source\ Code\ Pro:h12:cANSI
 
-Bundle 'scrooloose/syntastic'
-Bundle 'ervandew/supertab'
-Bundle 'OmniCppComplete'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
+Plugin 'OmniCppComplete'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jiangmiao/auto-pairs'
 
 " required by snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim' 
-Bundle 'garbas/vim-snipmate' 
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim' 
+Plugin 'garbas/vim-snipmate' 
 " optional
-Bundle 'honza/vim-snippets' 
+Plugin 'honza/vim-snippets' 
 
 " Required by FuzzyFinder
-Bundle 'L9' 
-Bundle 'FuzzyFinder'
+Plugin 'L9' 
+Plugin 'FuzzyFinder'
     :nmap fff :FufFile<cr>
     :nmap ffd :FufDir<cr>
 
 " <LEADER><LEADER>w -- jump to words
 " <LEADER><LEADER>f<char> -- jump to <char>
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'Lokaltog/vim-easymotion'
     omap z <Plug>(easymotion-t)
     let g:EasyMotion_keys='hklyuiopnm,qwertzxcvbasdgjf;'
     let g:EasyMotion_smartcase = 1
@@ -105,30 +105,30 @@ Bundle 'Lokaltog/vim-easymotion'
 " <LEADER>c<SPACE> -- comment toggle
 " <LEADER>ci -- comment invert(commented to uncommented and vice versa)
 " <LEADER>cA -- comment at the end of line
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
     map ,c <plug>NERDCommenterInvert
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
     set laststatus=2
 
 " gc{motion} comment or uncomment lines that {motion} moves over
 " [count]gcc comment or uncomment [count] lines
 " [range]gc comment or uncomment lines that ranged
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 
 " <C-n> -- mark one word under cursor per strike
 " <C-p> -- mark one previous word under cursor per strike
 " <C-x> -- mark one next word under cursor per strike
 " once marked some words, use 'c', 'i' or some other commands to modify all of them
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 
-Bundle 'Mark'
+Plugin 'Mark'
 
 " + -- increase selected region
 " - -- decrease selected region
-Bundle 'terryma/vim-expand-region'
+Plugin 'terryma/vim-expand-region'
 
-Bundle 'mbbill/undotree'
+Plugin 'mbbill/undotree'
     :nmap <LEADER>ut :UndotreeToggle<cr>
     :nmap <LEADER>uf :UndotreeFocus<cr>
     if has("persistent_undo") 
@@ -137,12 +137,12 @@ Bundle 'mbbill/undotree'
     endif
 
 
-Bundle 'mileszs/ack.vim'
-Bundle 'zhchang/quick_file'
+Plugin 'mileszs/ack.vim'
+Plugin 'zhchang/quick_file'
     map qf :QF <c-r><c-w>
 
 
-"Bundle 'klen/python-mode.git'
+"Plugin 'klen/python-mode.git'
     " let g:pymode_doc_bind = 'K'
 "    let g:pymode_run = 1 
 "    let g:pymode_run_bind = '<leader>pr'
@@ -171,20 +171,20 @@ Bundle 'zhchang/quick_file'
 " cs[char1][char2]: change surround [char1] to [char2]
 " ysiw[char]: surround current word with [char]
 " v[motion]S[char]: surround motioned chars with [char]
-Bundle 'tpope/vim-surround.git'
+Plugin 'tpope/vim-surround.git'
 
 " Extend repeat action(ie. '.') to plugins
-Bundle 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-repeat.git'
 
-Bundle 'wlangstroth/vim-racket'
+Plugin 'wlangstroth/vim-racket'
 
 " <Lead>ig to toggle the indent guide
-"Bundle 'nathanaelkane/vim-indent-guides'
+"Plugin 'nathanaelkane/vim-indent-guides'
     "let g:indent_guides_enable_on_vim_startup = 1
     "let g:indent_guides_space_guides = 1
 
-Bundle 'vim-voom/VOoM'
-Bundle 'kien/rainbow_parentheses.vim'
+Plugin 'vim-voom/VOoM'
+Plugin 'kien/rainbow_parentheses.vim'
 let g:rbpt_colorpairs = [
             \ ['brown',       'RoyalBlue3'],
             \ ['Darkblue',    'SeaGreen3'],
@@ -209,21 +209,25 @@ let g:rbpt_colorpairs = [
     au Syntax * RainbowParenthesesLoadRound
     au Syntax * RainbowParenthesesLoadSquare
     au Syntax * RainbowParenthesesLoadBraces
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
   let g:ctrlp_regexp = 1
 
-Bundle 'brookhong/cscope.vim'
+Plugin 'brookhong/cscope.vim'
 
-Bundle 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine'
     let g:indentLine_color_gui = '#A4E57E'
 
-Bundle 'kana/vim-textobj-user'
-Bundle 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-entire'
     " textobj 'ae/ie' for entire buffer
 
-Bundle 'nelstrom/vim-visual-star-search'
+Plugin 'nelstrom/vim-visual-star-search'
 
-Bundle 'A.vim'
+Plugin 'A.vim'
+
+if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
+    Plugin 'amoffat/snake'
+endif
 
 filetype plugin on
 filetype plugin indent on
@@ -250,7 +254,7 @@ set incsearch
 
 let mapleader = ","
 nmap <leader>evrc :e ~/.vimrc<CR>
-nmap F6 so ~/.vimrc<CR>
+nmap <F6> :so ~/.vimrc<CR>
 
 " switch between window/pane as same as tmux
 nmap <C-A> <C-W>
