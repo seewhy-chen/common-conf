@@ -257,9 +257,12 @@ nmap <leader>evrc :e ~/.vimrc<CR>
 nmap <F6> :so ~/.vimrc<CR>
 
 " switch between window/pane as same as tmux
-nmap <C-A> <C-W>
-nmap <C-w>\| <C-w>v<C-w>l
-nmap <C-w>- <C-w>s<C-w>j
+nmap <C-A>h <C-W>h
+nmap <C-A>j <C-W>j
+nmap <C-A>k <C-W>k
+nmap <C-A>l <C-W>l
+nmap <C-A>\| <C-w>v<C-w>l
+nmap <C-A>- <C-w>s<C-w>j
 
 " infinite undo
 set undofile
