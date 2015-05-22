@@ -268,5 +268,14 @@ nmap <C-A>- <C-w>s<C-w>j
 set undofile
 set undodir=~/.vim/.undodir
 
-" auto save all files on focus lost
-:au FocusLost * silent| wa
+" auto save all files on focus lost if the buffer has a name
+function AutoSaveIfHasFileName()
+    let filename = expand("<afile>")
+    if empty(filename)
+        return
+    endif
+    silent| wa!
+    echo filename "saved\r"
+endfunction
+
+:au FocusLost * call AutoSaveIfHasFileName()
