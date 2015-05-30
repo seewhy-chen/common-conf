@@ -106,7 +106,7 @@ Plugin 'Lokaltog/vim-easymotion'
 " <LEADER>ci -- comment invert(commented to uncommented and vice versa)
 " <LEADER>cA -- comment at the end of line
 Plugin 'scrooloose/nerdcommenter'
-    map ,c <plug>NERDCommenterInvert
+    map <C-m> <plug>NERDCommenterInvert
 
 Plugin 'bling/vim-airline'
     set laststatus=2
@@ -228,6 +228,9 @@ Plugin 'A.vim'
 if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
     Plugin 'amoffat/snake'
 endif
+
+Plugin 'moll/vim-node'
+set runtimepath^=~/.vim/bundle/node
 
 filetype plugin on
 filetype plugin indent on
