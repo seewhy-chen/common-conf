@@ -232,7 +232,9 @@ if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
 endif
 
 Plugin 'moll/vim-node'
-set runtimepath^=~/.vim/bundle/node
+    set runtimepath^=~/.vim/bundle/node
+
+Plugin 'briancollins/vim-jst'
 
 filetype plugin on
 filetype plugin indent on
