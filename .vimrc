@@ -76,6 +76,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'scrooloose/nerdtree'
+    nnoremap <silent><F8> :NERDTreeToggle<cr>
+
 Plugin 'jiangmiao/auto-pairs'
 
 " required by snipmate
