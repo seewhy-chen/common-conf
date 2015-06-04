@@ -271,6 +271,14 @@ nmap <C-A>l <C-W>l
 nmap <C-A>\| <C-w>v<C-w>l
 nmap <C-A>- <C-w>s<C-w>j
 
+nmap <leader>o o<ESC>
+nmap <leader>O O<ESC>
+nmap <silent> <leader>fe :Explore<cr>
+
+nmap <A-o> :A<cr>
+nmap <A-g> :Utl<cr>
+nmap gw <Esc>:sp %<CR> gf
+
 " infinite undo
 set undofile
 set undodir=~/.vim/.undodir
