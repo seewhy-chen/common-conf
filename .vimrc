@@ -1,7 +1,7 @@
 set nocompatible
 set novisualbell
-set notimeout
-set nottimeout
+set timeoutlen=250
+set ttimeoutlen=250
 
 filetype off
 
