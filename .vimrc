@@ -1,5 +1,7 @@
 set nocompatible
 set novisualbell
+set notimeout
+set nottimeout
 
 filetype off
 
@@ -99,8 +101,8 @@ Plugin 'Lokaltog/vim-easymotion'
     omap z <Plug>(easymotion-t)
     let g:EasyMotion_keys='hklyuiopnm,qwertzxcvbasdgjf;'
     let g:EasyMotion_smartcase = 1
-    nmap <space> <Plug>(easymotion-bd-w)
-    nmap <S-space> <Plug>(easymotion-bd-e)
+    nmap <A-Space> <Plug>(easymotion-bd-w)
+    nmap <S-Space> <Plug>(easymotion-bd-e)
 
 
 " <LEADER>cc -- comment
@@ -117,6 +119,8 @@ Plugin 'bling/vim-airline'
 " [count]gcc comment or uncomment [count] lines
 " [range]gc comment or uncomment lines that ranged
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rsi'
 
 " <C-n> -- mark one word under cursor per strike
 " <C-p> -- mark one previous word under cursor per strike
@@ -129,6 +133,8 @@ Plugin 'Mark'
 " + -- increase selected region
 " - -- decrease selected region
 Plugin 'terryma/vim-expand-region'
+    vmap v <Plug>(expand_region_expand)
+    vmap <C-v> <Plug>(expand_region_shrink)
 
 Plugin 'mbbill/undotree'
     :nmap <LEADER>ut :UndotreeToggle<cr>
@@ -177,8 +183,6 @@ Plugin 'tpope/vim-surround.git'
 
 " Extend repeat action(ie. '.') to plugins
 Plugin 'tpope/vim-repeat.git'
-
-Plugin 'wlangstroth/vim-racket'
 
 " <Lead>ig to toggle the indent guide
 "Plugin 'nathanaelkane/vim-indent-guides'
@@ -259,9 +263,10 @@ set nobackup
 set shortmess=a
 set incsearch
 
-let mapleader = ","
-nmap <leader>evrc :e ~/.vimrc<CR>
-nmap <F6> :so ~/.vimrc<CR>
+"let mapleader = ","
+"is following leader a better choice?
+let mapleader = "\<Space>" 
+ 
 
 " switch between window/pane as same as tmux
 nmap <C-A>h <C-W>h
@@ -271,26 +276,39 @@ nmap <C-A>l <C-W>l
 nmap <C-A>\| <C-w>v<C-w>l
 nmap <C-A>- <C-w>s<C-w>j
 
+nmap <leader>ev :e ~/.vimrc<CR>
+nmap <leader>sv :so ~/.vimrc<CR>
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
+nmap <leader>w :w<ESC>
+nmap <leader><leader> V
 nmap <silent> <leader>fe :Explore<cr>
 
 nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<CR> gf
 
+nnoremap <C-CR> G
+nnoremap <BS> gg 
+
 " infinite undo
 set undofile
 set undodir=~/.vim/.undodir
 
 " auto save all files on focus lost if the buffer has a name
-function AutoSaveIfHasFileName()
+function AutoSaveIfSavable()
     let filename = expand("<afile>")
     if empty(filename)
         return
     endif
+
+    let currword = expand("<cWORD>")
+    if empty(currword)
+        return
+    endif
+
     silent| wa!
     echo filename "saved\r"
 endfunction
 
-:au FocusLost * call AutoSaveIfHasFileName()
+:au FocusLost * call AutoSaveIfSavable()
