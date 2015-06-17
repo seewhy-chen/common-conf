@@ -140,7 +140,7 @@ Plugin 'mbbill/undotree'
     :nmap <LEADER>ut :UndotreeToggle<cr>
     :nmap <LEADER>uf :UndotreeFocus<cr>
     if has("persistent_undo") 
-        set undodir='C:/Users/SeeWhy/.vim/.undodir/' 
+        set undodir='~/.vim/.undodir/' 
         set undofile 
     endif
 
@@ -290,6 +290,8 @@ nmap gw <Esc>:sp %<CR> gf
 
 nnoremap <C-CR> G
 nnoremap <BS> gg 
+
+imap <C-t> <ESC>xpi
 
 " infinite undo
 set undofile
