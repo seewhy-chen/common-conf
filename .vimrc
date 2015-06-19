@@ -110,7 +110,7 @@ Plugin 'Lokaltog/vim-easymotion'
 " <LEADER>ci -- comment invert(commented to uncommented and vice versa)
 " <LEADER>cA -- comment at the end of line
 Plugin 'scrooloose/nerdcommenter'
-    map <C-m> <plug>NERDCommenterInvert
+    map <C-CR> <plug>NERDCommenterInvert
 
 Plugin 'bling/vim-airline'
     set laststatus=2
@@ -288,7 +288,6 @@ nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<CR> gf
 
-nnoremap <C-CR> G
 nnoremap <BS> gg 
 
 imap <C-t> <ESC>xpi
@@ -296,6 +295,10 @@ imap <C-t> <ESC>xpi
 " infinite undo
 set undofile
 set undodir=~/.vim/.undodir
+
+" enable zsh-like Tab complete
+set wildmenu
+set wildmode=full
 
 " auto save all files on focus lost if the buffer has a name
 function AutoSaveIfSavable()
