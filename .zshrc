@@ -1,4 +1,4 @@
-[ -z "$TMUX" ] && export TERM=xterm-256color
+# [ -z "$TMUX" ] && export TERM=xterm-256color
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -59,7 +59,7 @@ autoload -U compinit
 #following is combined from themes of amuse and robbyrussell
 local ret_status="%(?:%{$fg_bold[green]%}OK:%{$fg_bold[red]%}ERR%s)"
 PROMPT='
-$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)⌚ %{$fg_bold[red]%}%*%{$reset_color%}
+$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
 compinit
@@ -120,12 +120,4 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
-
-export PATH=~/usr/bin:$PATH
-cd ~/work/
-
-if [[ "$TERM" != "screen-256color" ]] 
-then
-    tmux attach-session -t "chenyu" || tmux -f ~/workspace.tmux.conf attach
-fi
 
