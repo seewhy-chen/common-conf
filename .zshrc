@@ -65,7 +65,7 @@ $ '
 compinit
 
 setopt extended_glob
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/chenyu/bin:/usr/local/java/jdk1.6.0_45/bin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
