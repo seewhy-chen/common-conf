@@ -1,8 +1,7 @@
-set nocompatible
-set novisualbell
-set timeoutlen=250
-set ttimeoutlen=250
-
+"let mapleader = ","
+"is following leader a better choice?
+let mapleader = "\<Space>" 
+ 
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -57,6 +56,7 @@ set history=50      " keep 50 lines of command line history
 set ruler       " show the cursor position all the time
 set showcmd     " display incomplete commands
 set incsearch       " do incremental searching
+set hlsearch
 set scrolloff=3
 set expandtab
 set smarttab
@@ -73,6 +73,11 @@ set shortmess=a
 set autoread
 set autowrite
 set guifont=Source\ Code\ Pro:h12:cANSI
+set nocompatible
+set novisualbell
+set timeoutlen=250
+set ttimeoutlen=250
+syntax on
 
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
@@ -104,13 +109,14 @@ Plugin 'Lokaltog/vim-easymotion'
     nmap <A-Space> <Plug>(easymotion-bd-w)
     nmap <S-Space> <Plug>(easymotion-bd-e)
 
-
 " <LEADER>cc -- comment
 " <LEADER>c<SPACE> -- comment toggle
 " <LEADER>ci -- comment invert(commented to uncommented and vice versa)
 " <LEADER>cA -- comment at the end of line
 Plugin 'scrooloose/nerdcommenter'
     map <C-CR> <plug>NERDCommenterInvert
+    map <C-/> <plug>NERDCommenterInvert
+    map <leader>c <plug>NERDCommenterInvert
 
 Plugin 'bling/vim-airline'
     set laststatus=2
@@ -263,11 +269,6 @@ set nobackup
 set shortmess=a
 set incsearch
 
-"let mapleader = ","
-"is following leader a better choice?
-let mapleader = "\<Space>" 
- 
-
 " switch between window/pane as same as tmux
 nmap <C-A>h <C-W>h
 nmap <C-A>j <C-W>j
@@ -281,7 +282,6 @@ nmap <leader>sv :so ~/.vimrc<CR>
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
 nmap <leader>w :w<ESC>
-nmap <leader><leader> V
 nmap <silent> <leader>fe :Explore<cr>
 
 nmap <A-o> :A<cr>
