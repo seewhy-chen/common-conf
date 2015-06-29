@@ -100,8 +100,8 @@ Plugin 'FuzzyFinder'
     :nmap fff :FufFile<cr>
     :nmap ffd :FufDir<cr>
 
-" <LEADER><LEADER>w -- jump to words
-" <LEADER><LEADER>f<char> -- jump to <char>
+" <leader><leader>w -- jump to words
+" <leader><leader>f<char> -- jump to <char>
 Plugin 'Lokaltog/vim-easymotion'
     omap z <Plug>(easymotion-t)
     let g:EasyMotion_keys='hklyuiopnm,qwertzxcvbasdgjf;'
@@ -109,10 +109,10 @@ Plugin 'Lokaltog/vim-easymotion'
     nmap <A-Space> <Plug>(easymotion-bd-w)
     nmap <S-Space> <Plug>(easymotion-bd-e)
 
-" <LEADER>cc -- comment
-" <LEADER>c<SPACE> -- comment toggle
-" <LEADER>ci -- comment invert(commented to uncommented and vice versa)
-" <LEADER>cA -- comment at the end of line
+" <leader>cc -- comment
+" <leader>c<SPACE> -- comment toggle
+" <leader>ci -- comment invert(commented to uncommented and vice versa)
+" <leader>cA -- comment at the end of line
 Plugin 'scrooloose/nerdcommenter'
     map <C-CR> <plug>NERDCommenterInvert
     map <C-/> <plug>NERDCommenterInvert
@@ -143,8 +143,8 @@ Plugin 'terryma/vim-expand-region'
     vmap <C-v> <Plug>(expand_region_shrink)
 
 Plugin 'mbbill/undotree'
-    :nmap <LEADER>ut :UndotreeToggle<cr>
-    :nmap <LEADER>uf :UndotreeFocus<cr>
+    :nmap <leader>ut :UndotreeToggle<cr>
+    :nmap <leader>uf :UndotreeFocus<cr>
     if has("persistent_undo") 
         set undodir='~/.vim/.undodir/' 
         set undofile 
