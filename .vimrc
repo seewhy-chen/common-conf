@@ -318,3 +318,7 @@ function AutoSaveIfSavable()
 endfunction
 
 :au FocusLost * call AutoSaveIfSavable()
+
+if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
+    set t_Co=256
+endif
