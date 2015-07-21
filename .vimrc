@@ -245,7 +245,9 @@ endif
 Plugin 'moll/vim-node'
     set runtimepath^=~/.vim/bundle/node
 
-Plugin 'briancollins/vim-jst'
+Plugin 'briancollins/vim-jst' 
+
+Plugin 'wakatime/vim-wakatime' 
 
 filetype plugin on
 filetype plugin indent on
