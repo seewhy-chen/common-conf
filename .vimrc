@@ -9,7 +9,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " multi-encoding setting
 if has("multi_byte")
