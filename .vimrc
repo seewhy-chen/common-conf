@@ -4,7 +4,7 @@ let mapleader = "\<Space>"
  
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -246,8 +246,6 @@ Plugin 'moll/vim-node'
     set runtimepath^=~/.vim/bundle/node
 
 Plugin 'briancollins/vim-jst' 
-
-Plugin 'wakatime/vim-wakatime' 
 
 filetype plugin on
 filetype plugin indent on
