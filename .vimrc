@@ -80,6 +80,7 @@ set ttimeoutlen=250
 syntax on
 
 Plugin 'scrooloose/syntastic'
+    let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'scrooloose/nerdtree'
@@ -244,7 +245,9 @@ endif
 Plugin 'moll/vim-node'
     set runtimepath^=~/.vim/bundle/node
 
-Plugin 'briancollins/vim-jst'
+Plugin 'briancollins/vim-jst' 
+
+Plugin 'wakatime/vim-wakatime' 
 
 filetype plugin on
 filetype plugin indent on
@@ -274,7 +277,7 @@ nmap <C-A>h <C-W>h
 nmap <C-A>j <C-W>j
 nmap <C-A>k <C-W>k
 nmap <C-A>l <C-W>l
-nmap <C-A>\| <C-w>v<C-w>l
+nmap <C-A>= <C-w>v<C-w>l
 nmap <C-A>- <C-w>s<C-w>j
 
 nmap <leader>ev :e ~/.vimrc<CR>
@@ -317,3 +320,7 @@ function AutoSaveIfSavable()
 endfunction
 
 :au FocusLost * call AutoSaveIfSavable()
+
+if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
+    set t_Co=256
+endif
