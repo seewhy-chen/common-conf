@@ -72,11 +72,12 @@ set si
 set shortmess=a
 set autoread
 set autowrite
-set guifont=Source\ Code\ Pro:h12:cANSI
+set guifont=Source\ Code\ Pro:h14:cANSI
 set nocompatible
 set novisualbell
 set timeoutlen=250
 set ttimeoutlen=250
+
 syntax on
 
 Plugin 'scrooloose/syntastic'
@@ -100,6 +101,7 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
     :nmap fff :FufFile<cr>
     :nmap ffd :FufDir<cr>
+    :nmap ffh :FufHelp<cr>
 
 " <leader><leader>w -- jump to words
 " <leader><leader>f<char> -- jump to <char>
@@ -198,7 +200,7 @@ Plugin 'tpope/vim-repeat.git'
 
 Plugin 'vim-voom/VOoM'
 Plugin 'kien/rainbow_parentheses.vim'
-let g:rbpt_colorpairs = [
+    let g:rbpt_colorpairs = [
             \ ['brown',       'RoyalBlue3'],
             \ ['Darkblue',    'SeaGreen3'],
             \ ['darkgray',    'DarkOrchid3'],
@@ -222,13 +224,39 @@ let g:rbpt_colorpairs = [
     au Syntax * RainbowParenthesesLoadRound
     au Syntax * RainbowParenthesesLoadSquare
     au Syntax * RainbowParenthesesLoadBraces
+
 Plugin 'kien/ctrlp.vim'
   let g:ctrlp_regexp = 1
 
 Plugin 'brookhong/cscope.vim'
+    " disable the messages for database updated
+    let g:cscope_silent = 1
+    " if total files in directory exceeds it, split the database to avoid long
+    " time of updating
+    let g:cscope_split_threshold = 9999
+
+    nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
+    nnoremap <leader>l :call ToggleLocationList()<CR>
+    " s: Find this C symbol
+    nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+    " g: Find this definition
+    nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+    " d: Find functions called by this function
+    nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+    " c: Find functions calling this function
+    nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+    " t: Find this text string
+    nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+    " e: Find this egrep pattern
+    nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+    " f: Find this file
+    nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+    " i: Find files #including this file
+    nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
 
 Plugin 'Yggdroot/indentLine'
-    let g:indentLine_color_gui = '#A4E57E'
+    "let g:indentLine_color_gui = '#A4E57E'
+    let g:indentLine_color_gui = '#808080'
 
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-entire'
@@ -259,16 +287,19 @@ set nu
 set smartcase
 set ignorecase
 set hls
+set autoindent
+set smartindent
+set cindent
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set scrolloff=3
 set smarttab
-set smartindent
 set expandtab
 set nobackup
 set shortmess=a
 set incsearch
+set autochdir
 
 " switch between window/pane as same as tmux
 nmap <C-A>h <C-W>h
@@ -290,6 +321,7 @@ nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<CR> gf
 
 nnoremap <BS> gg 
+nmap <A-F8> gg=G<C-o><C-o>
 
 imap <C-t> <ESC>xpi
 
@@ -302,7 +334,7 @@ set wildmenu
 set wildmode=full
 
 " auto save all files on focus lost if the buffer has a name
-function AutoSaveIfSavable()
+function! AutoSaveIfSavable()
     let filename = expand("<afile>")
     if empty(filename)
         return
@@ -322,3 +354,5 @@ endfunction
 if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
     set t_Co=256
 endif
+
+
