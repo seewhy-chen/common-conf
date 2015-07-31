@@ -82,6 +82,8 @@ syntax on
 
 Plugin 'scrooloose/syntastic'
     let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
+    map <leader>er :Errors<CR>
+
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'scrooloose/nerdtree'
