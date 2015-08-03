@@ -316,7 +316,7 @@ nmap <leader>sv :so ~/.vimrc<CR>
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
 nmap <leader>w :w<ESC>
-nmap <silent> <leader>fe :Explore<cr>
+nmap <silent> <leader>exp :Explore<cr>
 
 nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
@@ -358,3 +358,10 @@ if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
 endif
 
 
+function! SaveAndFormat()
+    silent execute ':w'
+    silent execute '!astyle --style=java -s -c -j -n -p -v -H -K -N -U -xn -xc -xl -xk -k3 -W3 %:h/%:t'
+    silent execute ':e %:h/%:t'
+endfunction
+
+nmap <A-F8> :call SaveAndFormat()<CR><CR><CR>
