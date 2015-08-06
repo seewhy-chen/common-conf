@@ -82,7 +82,11 @@ syntax on
 
 Plugin 'scrooloose/syntastic'
     let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
-    map <leader>er :Errors<CR>
+    function! OpenErrors()
+        silent execute ':Errors'
+        silent execute ':lopen'
+    endfunction
+    map <leader>er :call OpenErrors()<CR>
 
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
@@ -267,6 +271,11 @@ Plugin 'kana/vim-textobj-entire'
 Plugin 'nelstrom/vim-visual-star-search'
 
 Plugin 'A.vim'
+    " unmap following keys
+    imap <Leader>is is
+    iunmap <Leader>is
+    imap <Leader>ihn ihn
+    iunmap <Leader>ihn
 
 if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
     Plugin 'amoffat/snake'
@@ -303,16 +312,10 @@ set shortmess=a
 set incsearch
 set autochdir
 
-" switch between window/pane as same as tmux
-nmap <C-A>h <C-W>h
-nmap <C-A>j <C-W>j
-nmap <C-A>k <C-W>k
-nmap <C-A>l <C-W>l
-nmap <C-A>= <C-w>v<C-w>l
-nmap <C-A>- <C-w>s<C-w>j
-
 nmap <leader>ev :e ~/.vimrc<CR>
 nmap <leader>sv :so ~/.vimrc<CR>
+nmap <leader>sp :sp <CR>
+nmap <leader>vs :vs <CR>
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
 nmap <leader>w :w<ESC>
