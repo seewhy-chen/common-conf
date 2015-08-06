@@ -368,3 +368,14 @@ function! SaveAndFormat()
 endfunction
 
 nmap <A-F8> :call SaveAndFormat()<CR><CR><CR>
+
+function! MaximizeWindow()
+    silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
+endfunction
+
+if has('win32')
+    au GUIEnter * simalt ~x
+else
+    au GUIEnter * call MaximizeWindow()
+endif
+
