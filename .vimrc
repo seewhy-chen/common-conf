@@ -4,6 +4,7 @@ let mapleader = "\<Space>"
  
 filetype off
 
+set rtp+=~/.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
@@ -73,6 +74,7 @@ set shortmess=a
 set autoread
 set autowrite
 set guifont=Source\ Code\ Pro:h14:cANSI
+set guioptions-=T
 set nocompatible
 set novisualbell
 set timeoutlen=250
