@@ -1,0 +1,48 @@
+[user]
+	name = SeeWhy
+	email = seewhy.chen@gmail.com
+	mail = seewhy.chen@gmail.com
+[gui]
+	fontui = -family \"YaHei Consolas Hybrid\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	encoding = utf-8
+[core]
+	autocrlf = false
+	filemode = false
+	safecrlf = true
+	editor = gvim
+	;excludesfile = ~/common-conf/.gitignore_global.txt
+[alias]
+	co = checkout
+	cob = checkout -b
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+	ls = log --pretty=format:%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Cgreen%s%C(magenta)\\ [%cn] --decorate --date=short
+	ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%C(magenta)\\ [%cn] --decorate --numstat
+	ld = log --pretty=format:%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Cgreen%s%C(magenta)\\ [%cn] --decorate --date=relative
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	mg = merge --no-ff
+	ustg = reset HEAD
+[http]
+	;proxy = http://192.168.1.1:8080
+[merge]
+	;tool = kdiff3
+[diff]
+	;guitool = kdiff3
+[credential]
+[mergetool "kdiff3"]
+	;path = D:/KDiff3/kdiff3.exe
+[difftool "kdiff3"]
+	;path = D:/KDiff3/kdiff3.exe
+	;cmd = \"D:/KDiff3/kdiff3.exe\" \"$LOCAL\" \"$REMOTE\"
+[push]
+	default = simple
+[github]
+	user = seewhy
+	token = 7c501c558442b482f5873912c77d49135f897b3b
+	email = seewhy.chen@gmail.com
+[color]
+	ui = true
