@@ -74,7 +74,7 @@ set shortmess=a
 set autoread
 set autowrite
 set guifont=Source\ Code\ Pro:h14:cANSI
-set guioptions-=T
+"set guioptions-=T
 set nocompatible
 set novisualbell
 set timeoutlen=250
