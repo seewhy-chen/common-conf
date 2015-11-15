@@ -1,3 +1,6 @@
+let $LANG='en'
+set langmenu=en
+
 "let mapleader = ","
 "is following leader a better choice?
 let mapleader = "\<Space>" 
