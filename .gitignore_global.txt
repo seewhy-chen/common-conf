@@ -1,0 +1,11 @@
+*.ncb
+*.suo
+*.user
+*.swp
+*.o
+*.obj
+*.tmp
+*.bak
+*.vspscc
+
+Debug*/
