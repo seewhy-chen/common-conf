@@ -26,7 +26,13 @@
 	ld = log --pretty=format:%C(yellow)%h\\ %C(cyan)%ad%Cred%d\\ %Cgreen%s%C(magenta)\\ [%cn] --decorate --date=relative
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	mg = merge --no-ff
-	ustg = reset HEAD
+    unstage = reset -q HEAD --
+    discard = checkout --
+    uncommit = reset --mixed HEAD~
+    graph = log --graph -10 --branches --remotes --tags  --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+    branches = branch -a
+    tags = tag
+    stashes = stash list
 [http]
 	;proxy = http://192.168.1.1:8080
 [merge]

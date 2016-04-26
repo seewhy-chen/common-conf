@@ -99,7 +99,6 @@ alias zshupdate="sudo ~/.oh-my-zsh/tools/upgrade.sh"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias ff="find -type f -name"
 alias fd="find -type d -name"
-alias adb='radb -P 15999'
 alias cls='reset'
 alias tl='tmux ls'
 alias ta='tmux attach -t'
