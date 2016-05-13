@@ -108,8 +108,6 @@ alias my_work='tmux attach-session -t "chenyu" || tmux -f ~/workspace.tmux.conf 
 alias gvim='vim'
 alias sai='sudo apt-get install'
 
-export PAGER=most
-
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
     if [[ $#BUFFER -eq 0  ]]; then
