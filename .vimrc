@@ -241,7 +241,15 @@ Plugin 'kien/rainbow_parentheses.vim'
     au Syntax * RainbowParenthesesLoadBraces
 
 Plugin 'kien/ctrlp.vim'
-  let g:ctrlp_regexp = 1
+    let g:ctrlp_regexp = 1
+  
+Plugin 'FelikZ/ctrlp-py-matcher'
+    let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+Plugin 'tacahiroy/ctrlp-funky'
+    nnoremap <Leader>fu :CtrlPFunky<Cr> 
+    " narrow the list down with a word under cursor 
+    nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 Plugin 'brookhong/cscope.vim'
     " disable the messages for database updated
