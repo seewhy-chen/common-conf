@@ -116,6 +116,7 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
     :nmap fff :FufFile<cr>
     :nmap ffd :FufDir<cr>
+    :nmap ffb :FufBuffer<cr>
     :nmap ffh :FufHelp<cr>
 
 " <leader><leader>w -- jump to words
@@ -142,7 +143,6 @@ Plugin 'bling/vim-airline'
 " gc{motion} comment or uncomment lines that {motion} moves over
 " [count]gcc comment or uncomment [count] lines
 " [range]gc comment or uncomment lines that ranged
-Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rsi'
 
@@ -207,6 +207,7 @@ Plugin 'tpope/vim-surround.git'
 
 " Extend repeat action(ie. '.') to plugins
 Plugin 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-commentary'
 
 " <Lead>ig to toggle the indent guide
 "Plugin 'nathanaelkane/vim-indent-guides'
@@ -298,10 +299,20 @@ if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
     Plugin 'amoffat/snake'
 endif
 
-Plugin 'moll/vim-node'
-    set runtimepath^=~/.vim/bundle/node
+"Plugin 'moll/vim-node'
+    "set runtimepath^=~/.vim/bundle/node
 
-Plugin 'briancollins/vim-jst' 
+Plugin 'godlygeek/csapprox'
+Plugin 'mhinz/vim-grepper'
+    let g:grepper = { 
+                \ 'tools': ['ag', 'git', 'grep'], 
+                \ 'open': 0, 
+                \ 'jump': 1, 
+                \ }
+    nnoremap <leader>git :Grepper -tool git -noswitch<cr>
+    nnoremap <leader>ag :Grepper -tool ag -grepprg ag --vimgrep -G '^.+\.txt'<cr>
+    nnoremap <leader>ack :Grepper -tool ack -cword -noprompt
+
 
 filetype plugin on
 filetype plugin indent on
