@@ -302,7 +302,6 @@ endif
 "Plugin 'moll/vim-node'
     "set runtimepath^=~/.vim/bundle/node
 
-Plugin 'godlygeek/csapprox'
 Plugin 'mhinz/vim-grepper'
     let g:grepper = { 
                 \ 'tools': ['ag', 'git', 'grep', 'ack'],
@@ -311,8 +310,6 @@ Plugin 'mhinz/vim-grepper'
                 \ }
     nnoremap <leader>git :Grepper -open -switch -tool git<cr>
     nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --vimgrep --hidden<cr>
-    nnoremap <leader>ack :Grepper -tool ack -cword -noprompt
-
 
 filetype plugin on
 filetype plugin indent on
