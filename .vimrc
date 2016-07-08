@@ -305,12 +305,12 @@ endif
 Plugin 'godlygeek/csapprox'
 Plugin 'mhinz/vim-grepper'
     let g:grepper = { 
-                \ 'tools': ['ag', 'git', 'grep'], 
+                \ 'tools': ['ag', 'git', 'grep', 'ack'],
                 \ 'open': 0, 
                 \ 'jump': 1, 
                 \ }
-    nnoremap <leader>git :Grepper -tool git -noswitch<cr>
-    nnoremap <leader>ag :Grepper -tool ag -grepprg ag --vimgrep -G '^.+\.txt'<cr>
+    nnoremap <leader>git :Grepper -open -switch -tool git<cr>
+    nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --vimgrep --hidden<cr>
     nnoremap <leader>ack :Grepper -tool ack -cword -noprompt
 
 
