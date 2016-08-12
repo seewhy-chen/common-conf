@@ -309,7 +309,7 @@ Plugin 'mhinz/vim-grepper'
                 \ 'jump': 1, 
                 \ }
     nnoremap <leader>git :Grepper -open -switch -tool git<cr>
-    nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --vimgrep --hidden<cr>
+    nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --hidden<cr>
 
 filetype plugin on
 filetype plugin indent on
@@ -339,11 +339,13 @@ set autochdir
 
 nmap <leader>ev :e ~/.vimrc<CR>
 nmap <leader>sv :so ~/.vimrc<CR>
-nmap <leader>sp :sp <CR>
-nmap <leader>vs :vs <CR>
+nmap <leader>sp :sp<CR>
+nmap <leader>vs :vs<CR>
 nmap <leader>o o<ESC>
 nmap <leader>O O<ESC>
-nmap <leader>w :w<ESC>
+nmap <leader>w :w<CR>
+nmap <leader>x :x<CR>
+nmap <leader>q :q<CR>
 nmap <silent> <leader>exp :Explore<cr>
 
 nmap <A-o> :A<cr>
