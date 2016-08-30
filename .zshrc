@@ -107,6 +107,7 @@ alias td='tmux detach'
 alias my_work='tmux attach-session -t "chenyu" || tmux -f ~/workspace.tmux.conf attach'
 alias gvim='vim'
 alias sai='sudo apt-get install'
+alias ack='ack-grep'
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
