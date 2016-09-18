@@ -95,7 +95,7 @@ Plugin 'scrooloose/syntastic'
         silent execute ':Errors'
         silent execute ':lopen'
     endfunction
-    map <leader>er :call OpenErrors()<CR>
+    map <leader>er :call OpenErrors()<cr>
 
 Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
@@ -259,24 +259,24 @@ Plugin 'brookhong/cscope.vim'
     " time of updating
     let g:cscope_split_threshold = 9999
 
-    nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<CR>
-    nnoremap <leader>l :call ToggleLocationList()<CR>
+    nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
+    nnoremap <leader>l :call ToggleLocationList()<cr>
     " s: Find this C symbol
-    nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<CR>
+    nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
     " g: Find this definition
-    nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<CR>
+    nnoremap  <leader>fg :call CscopeFind('g', expand('<cword>'))<cr>
     " d: Find functions called by this function
-    nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<CR>
+    nnoremap  <leader>fd :call CscopeFind('d', expand('<cword>'))<cr>
     " c: Find functions calling this function
-    nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<CR>
+    nnoremap  <leader>fc :call CscopeFind('c', expand('<cword>'))<cr>
     " t: Find this text string
-    nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<CR>
+    nnoremap  <leader>ft :call CscopeFind('t', expand('<cword>'))<cr>
     " e: Find this egrep pattern
-    nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<CR>
+    nnoremap  <leader>fe :call CscopeFind('e', expand('<cword>'))<cr>
     " f: Find this file
-    nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<CR>
+    nnoremap  <leader>ff :call CscopeFind('f', expand('<cword>'))<cr>
     " i: Find files #including this file
-    nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<CR>
+    nnoremap  <leader>fi :call CscopeFind('i', expand('<cword>'))<cr>
 
 Plugin 'Yggdroot/indentLine'
     "let g:indentLine_color_gui = '#A4E57E'
@@ -337,25 +337,23 @@ set shortmess=a
 set incsearch
 set autochdir
 
-nmap <leader>ev :e ~/.vimrc<CR>
-nmap <leader>sv :so ~/.vimrc<CR>
-nmap <leader>sp :sp<CR>
-nmap <leader>vs :vs<CR>
-nmap <leader>o o<ESC>
-nmap <leader>O O<ESC>
-nmap <leader>w :w<CR>
-nmap <leader>x :x<CR>
-nmap <leader>q :q<CR>
+nmap <leader>ev :e ~/.vimrc<cr>
+nmap <leader>sv :so ~/.vimrc<cr>
+nmap <leader>sp :sp<cr>
+nmap <leader>vs :vs<cr>
+nmap <leader>o o<esc>
+nmap <leader>O O<esc>
+nmap <leader>w :w<cr>
+nmap <leader>x :x<cr>
+nmap <leader>q :q<cr>
 nmap <silent> <leader>exp :Explore<cr>
 
 nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
-nmap gw <Esc>:sp %<CR> gf
+nmap gw <Esc>:sp %<cr> gf
 
 nnoremap <BS> gg 
-nmap <A-F8> gg=G<C-o><C-o>
-
-imap <C-t> <ESC>xpi
+imap <C-t> <esc>xpi
 
 " infinite undo
 set undofile
@@ -394,7 +392,7 @@ function! SaveAndFormat()
     silent execute ':e %:h/%:t'
 endfunction
 
-nmap <A-F8> :call SaveAndFormat()<CR><CR><CR>
+nmap <A-F8> :call SaveAndFormat()<cr><cr><cr>
 
 function! MaximizeWindow()
     silent !wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz
