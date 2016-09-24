@@ -109,6 +109,7 @@ alias gvim='vim'
 alias sai='sudo apt-get install'
 alias sar='sudo apt-get remove'
 alias ack='ack-grep'
+alias ll='ls -lht'
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
