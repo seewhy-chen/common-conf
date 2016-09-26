@@ -295,9 +295,9 @@ Plugin 'A.vim'
     imap <Leader>ihn ihn
     iunmap <Leader>ihn
 
-if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
-    Plugin 'amoffat/snake'
-endif
+"if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
+    "Plugin 'amoffat/snake'
+"endif
 
 "Plugin 'moll/vim-node'
     "set runtimepath^=~/.vim/bundle/node
