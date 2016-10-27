@@ -58,32 +58,37 @@ else
 endif
 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start
 
-set history=50      " keep 50 lines of command line history
-set ruler       " show the cursor position all the time
-set showcmd     " display incomplete commands
-set incsearch       " do incremental searching
-set hlsearch
-set scrolloff=3
-set expandtab
-set smarttab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set nobackup
+
+"set guioptions-=T
 "set nowritebackup
-set rnu
-set nu
-set ignorecase smartcase
-set si
-set shortmess=a
+set	rnu
+set autochdir
+set autoindent
 set autoread
 set autowrite
+set backspace=indent,eol,start
+set cindent
+set expandtab
 set guifont=Source\ Code\ Pro:h14:cANSI
-"set guioptions-=T
+set history=50      " keep 50 lines of command line history
+set hlsearch
+set ignorecase smartcase
+set incsearch       " do incremental searching
+set nobackup
 set nocompatible
 set novisualbell
+set nu
+set rnu
+set ruler       " show the cursor position all the time
+set scrolloff=1
+set shiftwidth=4
+set shortmess=a
+set showcmd     " display incomplete commands
+set smartindent
+set smarttab
+set softtabstop=4
+set tabstop=4
 set timeoutlen=250
 set ttimeoutlen=250
 
@@ -139,6 +144,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'bling/vim-airline'
     set laststatus=2
+    let g:airline#extensions#tagbar#enabled = 1
 
 " gc{motion} comment or uncomment lines that {motion} moves over
 " [count]gcc comment or uncomment [count] lines
@@ -311,31 +317,12 @@ Plugin 'mhinz/vim-grepper'
     nnoremap <leader>git :Grepper -open -switch -tool git<cr>
     nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --hidden<cr>
 
+Plugin 'majutsushi/tagbar.git'
+
 filetype plugin on
 filetype plugin indent on
 
 let g:fencview_autodetect=1
-
-set backspace=indent,eol,start
-set ruler
-set	rnu
-set nu
-set smartcase
-set ignorecase
-set hls
-set autoindent
-set smartindent
-set cindent
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set scrolloff=3
-set smarttab
-set expandtab
-set nobackup
-set shortmess=a
-set incsearch
-set autochdir
 
 nmap <leader>ev :e ~/.vimrc<cr>
 nmap <leader>sv :so ~/.vimrc<cr>
