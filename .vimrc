@@ -338,6 +338,9 @@ nmap <silent> <leader>exp :Explore<cr>
 nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<cr> gf
+nmap <C-s> :w<cr> 
+nmap <C-x><C-s> :wall<cr>
+nmap <C-x>1 :only<cr> 
 
 nnoremap <BS> gg 
 imap <C-t> <esc>xpi
