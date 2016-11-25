@@ -7,5 +7,6 @@
 *.tmp
 *.bak
 *.vspscc
+*.VC.db
 
 Debug*/

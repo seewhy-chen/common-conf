@@ -107,7 +107,7 @@ alias td='tmux detach'
 alias my_work='tmux attach-session -t "chenyu" || tmux -f ~/workspace.tmux.conf attach'
 alias gvim='vim'
 alias sai='sudo apt-get install'
-alias sar='sudo apt-get remove'
+alias sarm='sudo apt-get remove'
 alias ack='ack-grep'
 alias ll='ls -lhtAF'
 
