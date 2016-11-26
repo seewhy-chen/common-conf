@@ -108,6 +108,10 @@ alias my_work='tmux attach-session -t "chenyu" || tmux -f ~/workspace.tmux.conf 
 alias gvim='vim'
 alias sai='sudo apt-get install'
 alias sarm='sudo apt-get remove'
+alias saupt='sudo apt-get update'
+alias saupg='sudo apt-get upgrade'
+alias saarm='sudo apt-get autoremove'
+alias saacln='sudo apt-get autoclean'
 alias ack='ack-grep'
 alias ll='ls -lhtAF'
 
