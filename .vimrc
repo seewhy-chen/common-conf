@@ -106,7 +106,7 @@ Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'scrooloose/nerdtree'
     nnoremap <silent><F8> :NERDTreeToggle<cr>
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 Plugin 'jiangmiao/auto-pairs'
 
 " required by snipmate
