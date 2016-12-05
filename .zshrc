@@ -130,3 +130,4 @@ zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
 ulimit -c unlimited
+export LC_ALL=en_US.UTF-8
