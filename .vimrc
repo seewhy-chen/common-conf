@@ -106,7 +106,7 @@ Plugin 'ervandew/supertab'
 Plugin 'OmniCppComplete'
 Plugin 'scrooloose/nerdtree'
     nnoremap <silent><F8> :NERDTreeToggle<cr>
-
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
 
 " required by snipmate
@@ -142,9 +142,11 @@ Plugin 'scrooloose/nerdcommenter'
     map <C-/> <plug>NERDCommenterInvert
     map <leader>c <plug>NERDCommenterInvert
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
     set laststatus=2
     let g:airline#extensions#tagbar#enabled = 1
+
+Plugin 'vim-airline/vim-airline-themes'
 
 " gc{motion} comment or uncomment lines that {motion} moves over
 " [count]gcc comment or uncomment [count] lines
@@ -344,6 +346,8 @@ nmap <C-x>1 :only<cr>
 
 nnoremap <BS> gg 
 imap <C-t> <esc>xpi
+imap <C-k> <esc>C
+nmap <C-k> <esc>D
 
 " infinite undo
 set undofile
