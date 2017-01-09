@@ -93,6 +93,41 @@ set timeoutlen=250
 set ttimeoutlen=250
 
 syntax on
+Plugin 'ctjhoa/spacevim'
+Plugin 'osyo-manga/vim-over'
+    map <Leader>oc :OverCommandLine<CR>
+
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-sensible'
+Plugin 'dbakker/vim-projectroot'
+    nnoremap <leader>dp :ProjectRootCD<cr>
+    nnoremap <leader>g :ProjectRootExe grep<space>
+    nnoremap <expr> <leader>ep ':edit '.projectroot#guess().'/'
+    nnoremap <silent> <leader>dt :ProjectRootExe NERDTreeFind<cr>
+
+Plugin 'pelodelfuego/vim-swoop'
+    let g:swoopUseDefaultKeyMap = 0
+    let g:swoopIgnoreCase = 1
+    let g:swoopAutoInserMode = 0
+    nmap <Leader>sl :call Swoop()<CR>
+    vmap <Leader>sl :call SwoopSelection()<CR>
+    nmap <Leader>ml :call SwoopMulti()<CR>
+    vmap <Leader>ml :call SwoopMultiSelection()<CR>
+
+Plugin 'kana/vim-arpeggio'
+    
+Plugin 'mhinz/vim-startify'
+Plugin 'haya14busa/incsearch.vim'
+    let g:incsearch#auto_nohlsearch = 1
+    map /  <Plug>(incsearch-forward)
+    map ?  <Plug>(incsearch-backward)
+    map g/ <Plug>(incsearch-stay)
+    map n  <Plug>(incsearch-nohl-n)
+    map N  <Plug>(incsearch-nohl-N)
+    map *  <Plug>(incsearch-nohl-*)
+    map #  <Plug>(incsearch-nohl-#)
+    map g* <Plug>(incsearch-nohl-g*)
+    map g# <Plug>(incsearch-nohl-g#)
 
 Plugin 'scrooloose/syntastic'
     let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
@@ -171,11 +206,6 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'mbbill/undotree'
     :nmap <leader>ut :UndotreeToggle<cr>
     :nmap <leader>uf :UndotreeFocus<cr>
-    if has("persistent_undo") 
-        set undodir='~/.vim/.undodir/' 
-        set undofile 
-    endif
-
 
 Plugin 'mileszs/ack.vim'
 Plugin 'zhchang/quick_file'
@@ -268,7 +298,7 @@ Plugin 'brookhong/cscope.vim'
     let g:cscope_split_threshold = 9999
 
     nnoremap <leader>fa :call CscopeFindInteractive(expand('<cword>'))<cr>
-    nnoremap <leader>l :call ToggleLocationList()<cr>
+    nnoremap <leader>ll :call ToggleLocationList()<cr>
     " s: Find this C symbol
     nnoremap  <leader>fs :call CscopeFind('s', expand('<cword>'))<cr>
     " g: Find this definition
