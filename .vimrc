@@ -428,3 +428,4 @@ else
     au GUIEnter * call MaximizeWindow()
 endif
 
+set ffs=unix,dos
