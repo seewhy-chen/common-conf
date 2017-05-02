@@ -350,6 +350,7 @@ Plugin 'mhinz/vim-grepper'
     nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --hidden<cr>
 
 Plugin 'majutsushi/tagbar.git'
+Plugin 'WolfgangMehner/bash-support'
 
 filetype plugin on
 filetype plugin indent on
