@@ -3,8 +3,8 @@ set langmenu=en
 
 "let mapleader = ","
 "is following leader a better choice?
-let mapleader = "\<Space>" 
- 
+let mapleader = "\<Space>"
+
 filetype off
 
 set rtp+=~/.vim
@@ -12,7 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " multi-encoding setting
@@ -70,7 +70,8 @@ set autowrite
 set backspace=indent,eol,start
 set cindent
 set expandtab
-set guifont=Source\ Code\ Pro:h14:cANSI
+"set guifont=Source\ Code\ Pro:h14:cANSI
+set guifont=Fira\ Code:h16:cANSI
 set history=50      " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase
@@ -84,6 +85,7 @@ set ruler       " show the cursor position all the time
 set scrolloff=1
 set shiftwidth=4
 set shortmess=a
+set shiftround
 set showcmd     " display incomplete commands
 set smartindent
 set smarttab
@@ -91,6 +93,15 @@ set softtabstop=4
 set tabstop=4
 set timeoutlen=250
 set ttimeoutlen=250
+set cul " hilight current line
+set ffs=unix,dos
+" better format for 'J'
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j
+endif
+
+match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\s\+$'
 
 syntax on
 Plugin 'ctjhoa/spacevim'
@@ -115,7 +126,7 @@ Plugin 'pelodelfuego/vim-swoop'
     vmap <Leader>ml :call SwoopMultiSelection()<CR>
 
 Plugin 'kana/vim-arpeggio'
-    
+
 Plugin 'mhinz/vim-startify'
 Plugin 'haya14busa/incsearch.vim'
     let g:incsearch#auto_nohlsearch = 1
@@ -130,7 +141,7 @@ Plugin 'haya14busa/incsearch.vim'
     map g# <Plug>(incsearch-nohl-g#)
 
 Plugin 'scrooloose/syntastic'
-    let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
+let g:syntastic_python_pylint_quiet_messages = { "level" : "warnings" }
     function! OpenErrors()
         silent execute ':Errors'
         silent execute ':lopen'
@@ -146,13 +157,13 @@ Plugin 'jiangmiao/auto-pairs'
 
 " required by snipmate
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim' 
-Plugin 'garbas/vim-snipmate' 
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 " optional
-Plugin 'honza/vim-snippets' 
+Plugin 'honza/vim-snippets'
 
 " Required by FuzzyFinder
-Plugin 'L9' 
+Plugin 'L9'
 Plugin 'FuzzyFinder'
     :nmap fff :FufFile<cr>
     :nmap ffd :FufDir<cr>
@@ -214,7 +225,7 @@ Plugin 'zhchang/quick_file'
 
 "Plugin 'klen/python-mode.git'
     " let g:pymode_doc_bind = 'K'
-"    let g:pymode_run = 1 
+"    let g:pymode_run = 1
 "    let g:pymode_run_bind = '<leader>pr'
     " let g:pymode_breakpoint_bind = '<leader>b'
     " let g:pymode_rope_show_doc_bind = '<C-c>d'
@@ -281,13 +292,13 @@ Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'kien/ctrlp.vim'
     let g:ctrlp_regexp = 1
-  
+
 Plugin 'FelikZ/ctrlp-py-matcher'
     let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 Plugin 'tacahiroy/ctrlp-funky'
-    nnoremap <Leader>fu :CtrlPFunky<Cr> 
-    " narrow the list down with a word under cursor 
+    nnoremap <Leader>fu :CtrlPFunky<Cr>
+    " narrow the list down with a word under cursor
     nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
 
 Plugin 'brookhong/cscope.vim'
@@ -341,15 +352,23 @@ Plugin 'A.vim'
     "set runtimepath^=~/.vim/bundle/node
 
 Plugin 'mhinz/vim-grepper'
-    let g:grepper = { 
+    let g:grepper = {
                 \ 'tools': ['ag', 'git', 'grep', 'ack'],
-                \ 'open': 0, 
-                \ 'jump': 1, 
+                \ 'open': 0,
+                \ 'jump': 1,
                 \ }
     nnoremap <leader>git :Grepper -open -switch -tool git<cr>
     nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --hidden<cr>
 
 Plugin 'majutsushi/tagbar.git'
+Plugin 'jimenezrick/vimerl'
+Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+  let g:vim_markdown_folding_disabled = 1
+
+Plugin 'rking/ag.vim'
+Plugin 'WolfgangMehner/bash-support'
 
 filetype plugin on
 filetype plugin indent on
@@ -360,6 +379,7 @@ nmap <leader>ev :e ~/.vimrc<cr>
 nmap <leader>sv :so ~/.vimrc<cr>
 nmap <leader>sp :sp<cr>
 nmap <leader>vs :vs<cr>
+nmap <leader>hs :sp<cr>
 nmap <leader>o o<esc>
 nmap <leader>O O<esc>
 nmap <leader>w :w<cr>
@@ -370,14 +390,22 @@ nmap <silent> <leader>exp :Explore<cr>
 nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<cr> gf
-nmap <C-s> :w<cr> 
+nmap <C-s> :w<cr>
 nmap <C-x><C-s> :wall<cr>
-nmap <C-x>1 :only<cr> 
+nmap <C-x>1 :only<cr>
 
-nnoremap <BS> gg 
+nnoremap <BS> gg
 imap <C-t> <esc>xpi
 imap <C-k> <esc>C
 nmap <C-k> <esc>D
+
+nnoremap <BS> {
+onoremap <BS> {
+vnoremap <BS> {
+
+nnoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
+onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
+vnoremap <CR> }
 
 " infinite undo
 set undofile
@@ -428,4 +456,3 @@ else
     au GUIEnter * call MaximizeWindow()
 endif
 
-set ffs=unix,dos
