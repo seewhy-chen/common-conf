@@ -93,8 +93,10 @@ set softtabstop=4
 set tabstop=4
 set timeoutlen=250
 set ttimeoutlen=250
-set cul " hilight current line
 set ffs=unix,dos
+if has('win32')
+    set cul " hilight current line
+endif
 " better format for 'J'
 if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j
@@ -369,6 +371,7 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'rking/ag.vim'
 Plugin 'WolfgangMehner/bash-support'
+Plugin 'fatih/vim-go'
 
 filetype plugin on
 filetype plugin indent on
