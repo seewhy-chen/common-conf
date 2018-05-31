@@ -115,6 +115,7 @@ alias saacln='sudo apt-get autoclean'
 alias ack='ack-grep'
 alias ll='ls -lhtF'
 alias lla='ls -lhtAF'
+alias llh='ls -lhthF'
 alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
 
 #use ctrl-z to switch between shell and bkgrd job
