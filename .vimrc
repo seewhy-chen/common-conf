@@ -62,7 +62,6 @@ endif
 
 "set guioptions-=T
 "set nowritebackup
-set	rnu
 set autochdir
 set autoindent
 set autoread
@@ -399,7 +398,7 @@ nmap <C-x>1 :only<cr>
 
 nnoremap <BS> gg
 imap <C-t> <esc>xpi
-imap <C-k> <esc>C
+imap <C-k> <esc><Right>C
 nmap <C-k> <esc>D
 
 nnoremap <BS> {
@@ -409,6 +408,15 @@ vnoremap <BS> {
 nnoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
 onoremap <expr> <CR> empty(&buftype) ? '}' : '<CR>'
 vnoremap <CR> }
+inoremap <M-j> <Down>
+inoremap <M-k> <Up>
+inoremap <M-h> <Left>
+inoremap <M-l> <Right>
+
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
+map <leader>th :tabp<cr>
+map <leader>tl :tabn<cr>
 
 " infinite undo
 set undofile
@@ -459,3 +467,14 @@ else
     au GUIEnter * call MaximizeWindow()
 endif
 
+function! RemoveTrailingWhiteSpace()
+    if &ft != "diff"
+        let b:curcol = col(".")
+        let b:curline = line(".")
+        silent! %s/\s\+$//
+        silent! %s/\(\s*\n\)\+\%$//
+        call cursor(b:curline, b:curcol)
+    endif
+endfunction
+
+autocmd BufWritePre * call RemoveTrailingWhiteSpace()
