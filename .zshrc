@@ -113,7 +113,8 @@ alias saupg='sudo apt-get upgrade'
 alias saarm='sudo apt-get autoremove'
 alias saacln='sudo apt-get autoclean'
 alias ack='ack-grep'
-alias ll='ls -lhtAF'
+alias ll='ls -lhtF'
+alias lla='ls -lhtAF'
 alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
 
 #use ctrl-z to switch between shell and bkgrd job
