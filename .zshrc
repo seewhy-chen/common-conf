@@ -95,6 +95,8 @@ alias 1="cd -"
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias bashrc="vim ~/.bashrc"
+alias szshrc="source ~/.zshrc"
+alias sbashrc="source ~/.bashrc"
 alias zshupdate="upgrade_oh_my_zsh"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias ff="find -type f -name"
@@ -116,6 +118,7 @@ alias ack='ack-grep'
 alias ll='ls -lhtF'
 alias lla='ls -lhtAF'
 alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
+alias sudo='sudo '
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
