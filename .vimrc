@@ -340,10 +340,7 @@ Plugin 'nelstrom/vim-visual-star-search'
 
 Plugin 'A.vim'
     " unmap following keys
-    imap <Leader>is is
-    iunmap <Leader>is
-    imap <Leader>ihn ihn
-    iunmap <Leader>ihn
+    nmap <A-o> :A<cr>
 
 "if(!has("win32") && !has("win95") && !has("win64") && !has("win16"))
     "Plugin 'amoffat/snake'
@@ -362,15 +359,19 @@ Plugin 'mhinz/vim-grepper'
     nnoremap <leader>ag :Grepper -open -switch -tool ag -grepprg ag --hidden<cr>
 
 Plugin 'majutsushi/tagbar.git'
-Plugin 'jimenezrick/vimerl'
-Plugin 'mattn/emmet-vim'
+"Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
   let g:vim_markdown_folding_disabled = 1
 
 Plugin 'rking/ag.vim'
 Plugin 'WolfgangMehner/bash-support'
-Plugin 'fatih/vim-go'
+
+"Plugin 'jimenezrick/vimerl'
+"Plugin 'fatih/vim-go'
+
+call vundle#end()
+
 
 filetype plugin on
 filetype plugin indent on
@@ -389,7 +390,6 @@ nmap <leader>x :x<cr>
 nmap <leader>q :q<cr>
 nmap <silent> <leader>exp :Explore<cr>
 
-nmap <A-o> :A<cr>
 nmap <A-g> :Utl<cr>
 nmap gw <Esc>:sp %<cr> gf
 nmap <C-s> :w<cr>
@@ -478,3 +478,12 @@ function! RemoveTrailingWhiteSpace()
 endfunction
 
 autocmd BufWritePre * call RemoveTrailingWhiteSpace()
+
+" remove some annoying key maps added by some plugs (hi, A.vim there!)
+function! RemoveAnnoyingKeyMaps()
+    iunmap <Leader>is
+    iunmap <Leader>ih
+    iunmap <Leader>ihn
+endfunction
+
+autocmd BufReadPre * call RemoveAnnoyingKeyMaps()
