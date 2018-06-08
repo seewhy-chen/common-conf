@@ -480,10 +480,14 @@ endfunction
 autocmd BufWritePre * call RemoveTrailingWhiteSpace()
 
 " remove some annoying key maps added by some plugs (hi, A.vim there!)
+let g:annoyingKeyMapsRemoved = 0
 function! RemoveAnnoyingKeyMaps()
-    iunmap <Leader>is
-    iunmap <Leader>ih
-    iunmap <Leader>ihn
+    if (g:annoyingKeyMapsRemoved == 0)
+        iunmap<silent> <Leader>is
+        iunmap<silent> <Leader>ih
+        iunmap<silent> <Leader>ihn
+        let g:annoyingKeyMapsRemoved = 1
+    endif
 endfunction
 
 autocmd BufReadPre * call RemoveAnnoyingKeyMaps()
