@@ -117,6 +117,7 @@ alias saacln='sudo apt-get autoclean'
 alias ack='ack-grep'
 alias ll='ls -lhtF'
 alias lla='ls -lhtAF'
+alias lld='ls -lhtd'
 alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
 alias sudo='sudo '
 
