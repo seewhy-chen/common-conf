@@ -136,3 +136,13 @@ bindkey '^Z' fancy-ctrl-z
 
 ulimit -c unlimited
 export LC_ALL=en_US.UTF-8
+export EDITOR=vim
+
+sudo() {
+    if [[ $1 == "vim" ]]; then
+        shift
+        command sudoedit "$@"
+    else
+        command sudo "$@"
+    fi
+}
