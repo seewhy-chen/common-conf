@@ -47,7 +47,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize autojump file-not-find zsh-autosuggestions)
+plugins=(git colored-man colorize autojump file-not-find zsh-autosuggestions docker)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,4 +145,9 @@ sudo() {
     else
         command sudo "$@"
     fi
+}
+
+mkcd() {
+    mkdir "$1"
+    cd "$1"
 }
