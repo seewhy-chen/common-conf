@@ -366,6 +366,7 @@ Plugin 'plasticboy/vim-markdown'
 
 Plugin 'rking/ag.vim'
 Plugin 'WolfgangMehner/bash-support'
+Plugin 'ekalinin/Dockerfile.vim'
 
 "Plugin 'jimenezrick/vimerl'
 "Plugin 'fatih/vim-go'

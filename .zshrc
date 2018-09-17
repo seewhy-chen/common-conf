@@ -120,6 +120,8 @@ alias lla='ls -lhtAF'
 alias lld='ls -lhtd'
 alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
 alias sudo='sudo '
+alias ports='ip -br -c a'
+alias psa='ps -aux'
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
