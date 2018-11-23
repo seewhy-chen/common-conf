@@ -364,9 +364,10 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
   let g:vim_markdown_folding_disabled = 1
 
-Plugin 'rking/ag.vim'
+"Plugin 'rking/ag.vim'
 Plugin 'WolfgangMehner/bash-support'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'junegunn/fzf.vim'
 
 "Plugin 'jimenezrick/vimerl'
 "Plugin 'fatih/vim-go'
