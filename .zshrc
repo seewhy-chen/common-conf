@@ -62,6 +62,9 @@ PROMPT='
 $ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
+local host_ip=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
+RPROMPT='%{$fg_bold[yellow]%}${host_ip}%{$reset_color%}'
+
 compinit
 
 setopt extended_glob
