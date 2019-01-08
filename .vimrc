@@ -70,7 +70,7 @@ set backspace=indent,eol,start
 set cindent
 set expandtab
 "set guifont=Source\ Code\ Pro:h14:cANSI
-set guifont=Fira\ Code:h16:cANSI
+set guifont=Fira\ Code:h14:cANSI
 set history=50      " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase
@@ -382,6 +382,13 @@ endif
 
 "Plugin 'jimenezrick/vimerl'
 "Plugin 'fatih/vim-go'
+Plugin 'wlangstroth/vim-racket'
+
+"<lead>KB -- show answer in a buffer
+"<lead>Kp -- past answer in current buffer
+"<lead>KE -- query error/warning message
+Plugin 'dbeniamine/cheat.sh-vim'
+
 
 call vundle#end()
 
