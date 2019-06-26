@@ -126,6 +126,8 @@ alias sudo='sudo '
 alias ports='ip -br -c a'
 alias psa='ps -aux'
 alias lsd='ll -d'
+alias untar='tar -zxvf'
+alias wget='wget -c'
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
