@@ -48,7 +48,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo thefuck zsh-navigation-tools ripgrep)
-
+bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
