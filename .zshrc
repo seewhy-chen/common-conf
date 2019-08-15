@@ -52,7 +52,9 @@ bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+TRAPWINCH() {
+    zle && { zle reset-prompt; zle -R  }
+}
 
 autoload -U compinit
 
