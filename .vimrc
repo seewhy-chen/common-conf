@@ -398,6 +398,8 @@ Plugin 'wlangstroth/vim-racket'
 "<lead>KE -- query error/warning message
 Plugin 'dbeniamine/cheat.sh-vim'
 
+Plugin 'gauteh/vim-cppman'
+
 
 call vundle#end()
 

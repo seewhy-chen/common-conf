@@ -47,12 +47,14 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize autojump file-not-find zsh-autosuggestions docker)
-
+plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo thefuck zsh-navigation-tools ripgrep)
+bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+TRAPWINCH() {
+    zle && { zle reset-prompt; zle -R  }
+}
 
 autoload -U compinit
 
@@ -121,10 +123,11 @@ alias ack='ack-grep'
 alias ll='ls -lhtF'
 alias lla='ls -lhtAF'
 alias lld='ls -lhtd'
-alias synctime='sudo service ntp stop;sudo ntpdate 0.cn.pool.ntp.org;sudo service ntp start'
-alias sudo='sudo '
 alias ports='ip -br -c a'
 alias psa='ps -aux'
+alias lsd='ll -d'
+alias untar='tar -zxvf'
+alias wget='wget -c'
 
 #use ctrl-z to switch between shell and bkgrd job
 fancy-ctrl-z () {
