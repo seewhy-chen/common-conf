@@ -70,7 +70,8 @@ set backspace=indent,eol,start
 set cindent
 set expandtab
 "set guifont=Source\ Code\ Pro:h14:cANSI
-set guifont=Fira\ Code:h14:cANSI
+"set guifont=Fira\ Code:h14:cANSI
+set guifont=Cascadia\ Code:h14:cANSI
 set history=50      " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase
@@ -187,6 +188,14 @@ Plugin 'Lokaltog/vim-easymotion'
     let g:EasyMotion_smartcase = 1
     nmap <A-Space> <Plug>(easymotion-bd-w)
     nmap <S-Space> <Plug>(easymotion-bd-e)
+    nmap <leader><leader>f <Plug>(easymotion-f)
+    nmap <leader><leader>t <Plug>(easymotion-t)
+    nmap <leader><leader>e <Plug>(easymotion-e)
+    nmap <leader><leader>w <Plug>(easymotion-w)
+    nmap <leader><leader>b <Plug>(easymotion-b)
+    nmap <leader><leader>e <Plug>(easymotion-e)
+    nmap <leader><leader>s <Plug>(easymotion-s)
+    nmap <leader><leader>/ <Plug>(easymotion-sn)
 
 " <leader>cc -- comment
 " <leader>c<SPACE> -- comment toggle
