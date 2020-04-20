@@ -7,7 +7,7 @@
 	encoding = utf-8
 [core]
 	autocrlf = false
-	filemode = false
+	fileMode = false
 	safecrlf = true
 	editor = gvim
 	;excludesfile = ~/common-conf/.gitignore_global.txt
