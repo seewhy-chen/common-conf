@@ -146,6 +146,7 @@ bindkey '^Z' fancy-ctrl-z
 ulimit -c unlimited
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
+export HISTCONTROL=$HISTCONTROL:ignoredups
 
 sudo() {
     if [[ $1 == "vim" ]]; then
