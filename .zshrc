@@ -47,7 +47,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo thefuck zsh-navigation-tools ripgrep)
+plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo thefuck zsh-navigation-tools ripgrep git-extras)
 bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
@@ -61,10 +61,10 @@ autoload -U compinit
 #following is combined from themes of amuse and robbyrussell
 local ret_status="%(?:%{$fg_bold[green]%}OK:%{$fg_bold[red]%}ERR%s)"
 PROMPT='
-$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) %{$fg_bold[red]%}%*%{$reset_color%}
+$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$fg_bold[yellow]%}$ndk_ver %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
-local host_ip=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
+local host_ip=$(ip route get 8.8.8.8 | awk '{print $7; exit}')
 RPROMPT='%{$fg_bold[yellow]%}${host_ip}%{$reset_color%}'
 
 compinit
@@ -146,6 +146,10 @@ bindkey '^Z' fancy-ctrl-z
 ulimit -c unlimited
 export LC_ALL=en_US.UTF-8
 export EDITOR=vim
+export HISTCONTROL=$HISTCONTROL:ignoreboth # 'both' means 'ignorespace' and 'ignoredup'
+setopt histappend # append command history to HISTFILE
+
+
 
 sudo() {
     if [[ $1 == "vim" ]]; then
