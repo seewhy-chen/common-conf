@@ -149,8 +149,6 @@ export EDITOR=vim
 export HISTCONTROL=$HISTCONTROL:ignoreboth # 'both' means 'ignorespace' and 'ignoredup'
 setopt histappend # append command history to HISTFILE
 
-
-
 sudo() {
     if [[ $1 == "vim" ]]; then
         shift
