@@ -61,7 +61,7 @@ autoload -U compinit
 #following is combined from themes of amuse and robbyrussell
 local ret_status="%(?:%{$fg_bold[green]%}OK:%{$fg_bold[red]%}ERR%s)"
 PROMPT='
-$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$fg_bold[yellow]%}$ndk_ver %{$fg_bold[red]%}%*%{$reset_color%}
+$ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$fg_bold[green]%}$ndk_ver %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
 local host_ip=$(ip route get 8.8.8.8 | awk '{print $7; exit}')
