@@ -80,7 +80,6 @@ set nobackup
 set nocompatible
 set novisualbell
 set nu
-set rnu
 set ruler       " show the cursor position all the time
 set scrolloff=1
 set shiftwidth=4
