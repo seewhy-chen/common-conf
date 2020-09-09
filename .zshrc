@@ -47,7 +47,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo thefuck zsh-navigation-tools ripgrep git-extras)
+plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo zsh-navigation-tools ripgrep git-extras)
 bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
