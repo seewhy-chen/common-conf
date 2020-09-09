@@ -64,7 +64,12 @@ PROMPT='
 $ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$fg_bold[green]%} $ndk_ver %{$fg_bold[red]%}%*%{$reset_color%}
 $ '
 
-local host_ip=$(ip route get 8.8.8.8 | awk '{print $7; exit}')
+local ip_str=$(ip route get 8.8.8.8)
+local ip_regex=".*src ([0-9.]+).*"
+if [[ $ip_str =~ "$ip_regex" ]]; then
+    # zsh captures into 'match' array, instead of 'BASH_REMATCH'
+    local host_ip="${match[1]}"
+fi
 RPROMPT='%{$fg_bold[yellow]%}${host_ip}%{$reset_color%}'
 
 compinit
