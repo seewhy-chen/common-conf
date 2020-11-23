@@ -432,6 +432,8 @@ nnoremap <BS> gg
 imap <C-t> <esc>xpi
 imap <C-k> <esc><Right>C
 nmap <C-k> <esc>D
+imap <C-j> <esc>Jxi
+nmap <C-j> Jx
 
 nnoremap <BS> {
 onoremap <BS> {
