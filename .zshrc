@@ -47,7 +47,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions docker tig sudo zsh-navigation-tools ripgrep git-extras fasd)
+plugins=(git colored-man-pages colorize autojump command-not-found zsh-autosuggestions tig sudo zsh-navigation-tools ripgrep git-extras fasd)
 bindkey "\e\e\e" sudo-command-line
 source $ZSH/oh-my-zsh.sh
 
@@ -59,10 +59,10 @@ TRAPWINCH() {
 autoload -U compinit
 
 #following is combined from themes of amuse and robbyrussell
-local ret_status="%(?:%{$fg_bold[green]%}OK:%{$fg_bold[red]%}ERR%s)"
+local ret_status="%(?:%{$fg_bold[green]%}%n@%M:%{$fg_bold[red]%}%n@%M%s)"
 PROMPT='
 $ret_status %{$fg_bold[blue]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info)%{$fg_bold[green]%} $ndk_ver %{$fg_bold[red]%}%*%{$reset_color%}
-$ '
+%{$fg_bold[yellow]%}zsh>>%{$reset_color%}$ '
 
 local ip_str=$(ip route get 8.8.8.8)
 local ip_regex=".*src ([0-9.]+).*"
